@@ -48,6 +48,11 @@ public class Main {
                 case 6:
                     printActions();
                     break;
+
+                default:
+                    System.out.println("Please enter a valid choice");
+                    printActions();
+                    break;
             }
         }
 
@@ -124,7 +129,7 @@ public class Main {
     }
 
     private static void queryContact(){
-        System.out.println("Enter contact to delete: ");
+        System.out.println("Enter contact to search: ");
         String name = scanner.nextLine();
 
         Contact existingContactRecord = mobilePhone.queryContact(name);

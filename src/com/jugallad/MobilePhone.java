@@ -49,10 +49,14 @@ public class MobilePhone {
 
         System.out.println("Contacts list");
 
-        for(int i=0;i<this.myContacts.size(); i++){
-            System.out.println((i+1)+"."+
-                                this.myContacts.get(i).getName()+" -> "+
-                                this.myContacts.get(i).getPhoneNumber());
+        if(myContacts.isEmpty()){
+            System.out.println("Nothing to see here, choose 2 to add a new contact.");
+        } else {
+            for(int i=0;i<this.myContacts.size(); i++){
+                System.out.println((i+1)+"."+
+                        this.myContacts.get(i).getName()+" -> "+
+                        this.myContacts.get(i).getPhoneNumber());
+            }
         }
     }
 
