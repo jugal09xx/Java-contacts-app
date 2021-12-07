@@ -45,6 +45,17 @@ public class MobilePhone {
         return true;
     }
 
+    public void printContacts(){
+
+        System.out.println("Contacts list");
+
+        for(int i=0;i<this.myContacts.size(); i++){
+            System.out.println((i+1)+"."+
+                                this.myContacts.get(i).getName()+" -> "+
+                                this.myContacts.get(i).getPhoneNumber());
+        }
+    }
+
     private int findContact(Contact contact) {
         return this.myContacts.indexOf(contact);
     }
@@ -63,6 +74,15 @@ public class MobilePhone {
         if(findContact(contact) >= 0) {
             return contact.getName();
         }
+        return null;
+    }
+
+    public Contact queryContact(String name){
+        int index =  findContact(name);
+        if(index >= 0){
+            return this.myContacts.get(index);
+        }
+
         return null;
     }
 }
